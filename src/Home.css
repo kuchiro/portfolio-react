@@ -1,0 +1,146 @@
+.intro {
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.intro-tag {
+  font-size: 14px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.intro-title {
+  font-size: 64px;
+  font-weight: 700;
+}
+
+.intro-sub {
+  font-size: 18px;
+  color: var(--text-muted);
+}
+
+.intro-desc {
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+.intro-btns {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.btn-primary {
+  padding: 12px 24px;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  padding: 12px 24px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#projets {
+  padding: 80px 24px;
+}
+
+#projets h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.project-card p {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  font-size: 13px;
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  color: var(--text-muted);
+}
+
+.project-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.project-buttons a {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.project-buttons a:first-child {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.project-buttons a:last-child {
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.project-buttons a:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+}
