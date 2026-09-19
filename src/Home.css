@@ -144,3 +144,51 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+#techstack {
+  padding: 80px 24px;
+}
+
+#techstack h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.stacks-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.tech-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.tech-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.tech-item i {
+  font-size: 20px;
+}
