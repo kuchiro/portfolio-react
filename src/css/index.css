@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap");
+
+/* Couleurs du mode clair */
+.light {
+  --bg: #f6f3ec;
+  --bg-soft: #efeadf;
+  --card: #fcfaf5;
+  --surface: #eae4d9;
+  --text: #20160e;
+  --text-muted: #665c50;
+  --accent: #885800;
+  --accent-strong: #774a00;
+  --accent-contrast: #faf8f4;
+  --accent-soft: rgba(136, 88, 0, 0.1);
+  --border: #ddd7cc;
+  --nav-bg: rgba(246, 243, 236, 0.8);
+  --shadow: 0 10px 30px -12px rgba(60, 40, 10, 0.25);
+  --glow: rgba(165, 109, 0, 0.18);
+}
+
+/* Couleurs du mode sombre */
+.dark {
+  --bg: #0c0704;
+  --bg-soft: #110b06;
+  --card: #140e08;
+  --surface: #221a12;
+  --text: #f2eee6;
+  --text-muted: #9e9484;
+  --accent: #e1af4a;
+  --accent-strong: #e1af4a;
+  --accent-contrast: #180d02;
+  --accent-soft: rgba(225, 175, 74, 0.1);
+  --border: #292016;
+  --nav-bg: rgba(12, 7, 4, 0.75);
+  --shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.7);
+  --glow: rgba(225, 175, 74, 0.12);
+}
+
+/* Variables communes aux deux thèmes + fond de la page */
+.light,
+.dark {
+  --radius: 12px;
+  --radius-sm: 8px;
+  --max-width: 1100px;
+  --nav-height: 68px;
+  --font: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg);
+  background-image: radial-gradient(
+    ellipse 80% 50% at 50% -10%,
+    var(--glow),
+    transparent 70%
+  );
+  background-repeat: no-repeat;
+  color: var(--text);
+  font-family: var(--font);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Décale l'arrivée des ancres pour ne pas passer sous la navbar */
+section {
+  scroll-margin-top: var(--nav-height);
+}
+
+/* Style commun à toutes les sections */
+.section {
+  padding: 96px 24px;
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 64px 16px;
+  }
+}

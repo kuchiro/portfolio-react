@@ -1,35 +1,36 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Home";
+import Main from "./Main";
 import Secret from "./Secret";
-import NavBar from "./Navbar";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 import { useState } from "react";
 
 export default function App() {
   const [theme, setTheme] = useState("light");
-  const [langue, setLangue] = useState("fr");
+  const [language, setLanguage] = useState("fr");
 
   function changeTheme() {
     setTheme(theme === "light" ? "dark" : "light");
   }
 
-  function changeLangue() {
-    setLangue(langue === "fr" ? "en" : "fr");
+  function changeLanguage() {
+    setLanguage(language === "fr" ? "en" : "fr");
   }
   return (
     <BrowserRouter>
-      <div className={theme === "light" ? "dark" : "light"}>
-        <NavBar
+      <div className={theme}>
+        <Navbar
           theme={theme}
-          langue={langue}
+          language={language}
           changeTheme={changeTheme}
-          changeLangue={changeLangue}
+          changeLanguage={changeLanguage}
         />
         <Routes>
-          <Route path="/" element={<Home 
-          langue ={langue}
-          />} />
+          <Route path="/" element={<Main language={language} />} />
           <Route path="/secret" element={<Secret />} />
         </Routes>
+
+        <Footer language={language} />
       </div>
     </BrowserRouter>
   );

@@ -1,0 +1,133 @@
+.timeline {
+  --gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(var(--accent), var(--border));
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.timeline-item.education {
+  align-self: center;
+  align-items: center;
+  text-align: center;
+  padding: 14px 28px;
+  background: var(--card);
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  box-shadow: 0 0 0 6px var(--bg), 0 0 0 7px var(--accent-soft);
+  z-index: 1;
+}
+
+.timeline-item.education .timeline-title {
+  font-size: 17px;
+}
+
+.timeline-item.work {
+  width: calc(50% - var(--gap));
+  padding: 22px 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.timeline-item.work:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.timeline-item.work.left {
+  align-self: flex-start;
+}
+
+.timeline-item.work.right {
+  align-self: flex-end;
+}
+
+.timeline-item.work::after {
+  content: "";
+  position: absolute;
+  top: 32px;
+  width: var(--gap);
+  height: 2px;
+  background: var(--border);
+}
+
+.timeline-item.work.left::after {
+  right: calc(-1 * var(--gap));
+}
+
+.timeline-item.work.right::after {
+  left: calc(-1 * var(--gap));
+}
+
+.timeline-item.work::before {
+  content: "";
+  position: absolute;
+  top: 26px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  z-index: 1;
+}
+
+.timeline-item.work.left::before {
+  right: calc(-1 * var(--gap) - 7px);
+}
+
+.timeline-item.work.right::before {
+  left: calc(-1 * var(--gap) - 7px);
+}
+
+.timeline-date {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.timeline-title {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.timeline-place {
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.timeline-desc {
+  margin-top: 6px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  white-space: pre-line;
+}
