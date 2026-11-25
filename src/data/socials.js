@@ -11,7 +11,7 @@ const socials = [
   },
   {
     name:"Email",
-    url: "mailto:stephanewu08@gmail.com",
+    url: "mailto:stephane.wu91@gmail.com",
     icon: "fa-solid fa-envelope"
 
   }
